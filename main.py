@@ -5,7 +5,7 @@ from arbitros import *
 from gestion import *
 
 def menu():
-    
+    # agregar la carga automática de los archhivos de json.
     while True:
         print("\n--- Menú Principal ---")
         print("1. Gestión de Equipos")
