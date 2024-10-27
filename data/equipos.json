@@ -1,0 +1,17 @@
+[
+    {
+        "id": 135,
+        "nombre": "hola",
+        "ciudad": "hola",
+        "director_tecnico": "hola",
+        "estadisticas": {
+            "puntos": 0,
+            "jugados": 0,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 0,
+            "goles_contra": 0
+        }
+    }
+]

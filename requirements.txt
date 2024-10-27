@@ -1,0 +1,14 @@
+# Librerías para manejo de datos y almacenamiento en JSON
+pandas==2.1.1
+
+# Librería para mostrar reportes tabulados en la consola
+tabulate==0.9.0
+
+# Librería para crear interfaces gráficas (si usarás una GUI como Tkinter)
+# tk==0.1.0
+
+# Librería para manejo de excepciones avanzadas (opcional)
+# loguru==0.7.0
+
+# Para asegurar compatibilidad de JSON si es necesario manipulación más compleja
+ujson==5.8.0
