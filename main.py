@@ -3,6 +3,7 @@ from jugadores import *
 from partidos import *
 from arbitros import *
 from gestion import *
+# agregar comentarios de cada sección
 
 def menu():
     # agregar la carga automática de los archhivos de json.
