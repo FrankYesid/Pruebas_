@@ -1,7 +1,7 @@
 # Sistema de Gestión de Torneo de Fútbol ⚽  
 
 ## Descripción  
-Este sistema es una aplicación desarrollada en **Python** que permite gestionar un torneo de fútbol. Incluye funcionalidades para administrar equipos, jugadores, árbitros, partidos y sanciones. Está orientado a facilitar la gestión de eventos deportivos con herramientas de registro, búsqueda y actualización de datos, junto con la generación de reportes.  
+Este sistema es una aplicación desarrollada en **Python** que permite gestionar un torneo de fútbol. Incluye funcionalidades para administrar *equipos*, *jugadores*, *árbitros* y *partidos*. Está orientado a facilitar la gestión de eventos deportivos con herramientas de registro, búsqueda y actualización de datos, junto con la generación de reportes.
 
 ## Estructura del Proyecto  
 ```
