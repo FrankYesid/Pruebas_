@@ -32,8 +32,6 @@ def menu():
         #     menu_partidos()
         elif opcion == '5':
             menu_reportes()
-        
-
         elif opcion == '0':
             print("¡Hasta luego!")
             break
@@ -218,24 +216,14 @@ def menu_reportes():
     opcion = input("Seleccione una opción: ")
 
     if opcion == '1':
-        posiciones = generar_tabla_posiciones()
-        print("\nTabla de posiciones:")
-        for idx, equipo in enumerate(posiciones, start=1):
-            estadisticas = equipo['estadisticas']
-            print(f"{idx}. {equipo['nombre']} - {estadisticas['puntos']} pts | "
-                  f"{estadisticas['ganados']}G-{estadisticas['empatados']}E-{estadisticas['perdidos']}P | "
-                  f"GF: {estadisticas['goles_a_favor']} GC: {estadisticas['goles_en_contra']}")
+        generar_tabla_posiciones()
+        
     elif opcion == '2':
-        goleadores = generar_lista_goleadores()
-        print("\nLista de goleadores:")
-        for jugador in goleadores:
-            print(f"{jugador['nombre']} - {jugador['estadisticas']['goles']} goles")
+        generar_lista_goleadores()
+        
     elif opcion == '3':
-        arbitros = generar_reporte_arbitros()
-        print("\nReporte de Árbitros:")
-        for arbitro in arbitros:
-            print(f"{arbitro['nombre']} - {arbitro['partidos_dirigidos']} partidos dirigidos "
-                  f"(Experiencia: {arbitro['experiencia']} años, Categoría: {arbitro['categoria']})")
+        generar_reporte_arbitros()
+        
     else:
         print("Opción no válida.")
 

@@ -1,8 +1,6 @@
 import os
 import json
 
-import os
-import json
 
 def cargar_datos(ruta):
     """Carga datos desde un archivo JSON. Si no existe, crea un archivo vacío."""
