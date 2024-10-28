@@ -1,3 +1,6 @@
+from config import partidos
+
+# Función para verificar si exite el partido
 def verificar_partido(id_partido):
     """Verifica si un partido con el ID dado ya existe."""
     for partido in partidos:
@@ -5,9 +8,7 @@ def verificar_partido(id_partido):
             return True
     return False
 
-# Lista que almacena los partidos
-partidos = []
-
+# Función para agregar un partido
 def registrar_partido(id_partido, fecha, id_arbitro, equipo_local, equipo_visitante):
     """Registra un nuevo partido y lo guarda en la lista."""
     if verificar_partido(id_partido):
@@ -28,6 +29,7 @@ def registrar_partido(id_partido, fecha, id_arbitro, equipo_local, equipo_visita
     print(f"Partido registrado entre {equipo_local} y {equipo_visitante}.")
     return partidos
 
+# Función para buscar un partido
 def buscar_partido(id_partido):
     """Busca un partido por su ID y muestra su información."""
     for partido in partidos:
@@ -44,6 +46,7 @@ def buscar_partido(id_partido):
             return
     print(f"No se encontró ningún partido con ID: {id_partido}.")
 
+# función para actualizar resultados del artido
 def actualizar_resultados(id_partido, goles_local, goles_visitante):
     """Actualiza los resultados de un partido."""
     for partido in partidos:
@@ -54,6 +57,7 @@ def actualizar_resultados(id_partido, goles_local, goles_visitante):
             return
     print(f"No se encontró ningún partido con ID: {id_partido}.")
 
+# función para colocar el evento sucedido
 def registrar_evento(id_partido, minuto, tipo_evento, jugador, equipo):
     """Registra un evento en un partido."""
     for partido in partidos:

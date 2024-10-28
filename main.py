@@ -5,12 +5,9 @@ from partidos import *
 from arbitros import *
 from gestion import *
 from reportes import *
-from config import equipos, jugadores, partidos, arbitros
 # agregar comentarios de cada sección 
 
 def menu():
-    # agregar la carga automática de los archivos de json.
-
     while True:
         print("\n--- Menú Principal ---")
         print("1. Gestión de Equipos")
@@ -50,14 +47,13 @@ def menu_equipos():
         if opcion == '1':
             # Registrar un nuevo equipo
             id_equipo = int(input("ID del equipo: "))
-            nombre = input("Nombre del equipo: ")
-            ciudad = input("Ciudad del equipo: ")
-            director_tecnico = input("Director técnico: ")
+            nombre = input("Nombre del equipo: ").title()
+            ciudad = input("Ciudad del equipo: ").title()
+            director_tecnico = input("Director técnico: ").title()
             data  = registrar_equipo(id_equipo, nombre, ciudad, director_tecnico)
             if data != None:
                 guardar_datos('data/equipos.json', data) 
-                # print(f"Equipo '{nombre}' registrado con éxito.")
-
+    
         elif opcion == '2':
             # Buscar un equipo
             id_equipo = int(input("ID del equipo que desea buscar: "))

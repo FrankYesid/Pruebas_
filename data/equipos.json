@@ -1,8 +1,38 @@
 [
     {
-        "id": 135,
-        "nombre": "cla",
-        "ciudad": "mede",
+        "id": 273,
+        "nombre": "fut",
+        "ciudad": "fut",
+        "director_tecnico": "fut",
+        "estadisticas": {
+            "puntos": 0,
+            "jugados": 0,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 0,
+            "goles_contra": 0
+        }
+    },
+    {
+        "id": 1536,
+        "nombre": "hola",
+        "ciudad": "hola",
+        "director_tecnico": "hola",
+        "estadisticas": {
+            "puntos": 0,
+            "jugados": 0,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 0,
+            "goles_contra": 0
+        }
+    },
+    {
+        "id": 148,
+        "nombre": "Juan",
+        "ciudad": "lucas",
         "director_tecnico": "pedro",
         "estadisticas": {
             "puntos": 0,

@@ -1,11 +1,13 @@
 import json
+# Llamo al archivo .py que contiene las variables globales que cargo para uso general
+from config import jugadores
 
 # Verificar si el ID del jugador ya existe
 def jugador_existe(id_jugador):
     """Verifica si un jugador con el ID dado ya existe."""
     return any(jugador["id"] == id_jugador for jugador in jugadores)
 
-jugadores = []
+# función para agregar un jugador
 def registrar_jugador(id_jugador, nombre, numero, posicion, equipo_id):
     """Registra un nuevo jugador y lo guarda en jugadores.json si no existe."""
     if jugador_existe(id_jugador):
@@ -40,9 +42,11 @@ def cargar_jugadores():
     except FileNotFoundError:
         jugadores = []  # Si no existe el archivo, inicializa una lista vacía
 
+# Función para buscar un jugador
 def buscar_jugador(id_jugador):
     return next((j for j in jugadores if j["id"] == id_jugador), None)
 
+# función para actualizar estadísticas de un jugador
 def actualizar_estadisticas_jugador(id_jugador, goles, asistencias, amarillas, rojas, minutos):
     jugador = buscar_jugador(id_jugador)
     if jugador:
@@ -54,8 +58,3 @@ def actualizar_estadisticas_jugador(id_jugador, goles, asistencias, amarillas, r
         jugador["estadisticas"]["minutos"] += minutos
     else:
         raise ValueError("Jugador no encontrado.")
-
-def generar_lista_goleadores():
-    # Ordenar la lista de jugadores por la cantidad de goles en orden descendente
-    jugadores_ordenados = sorted(jugadores, key=lambda j: j['estadisticas']['goles'], reverse=True)
-    return jugadores_ordenados

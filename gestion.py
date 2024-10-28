@@ -1,7 +1,8 @@
+# Librerias utilizadas para el proceso
 import os
 import json
 
-
+# Función par cargar los datos de un archivo .json
 def cargar_datos(ruta):
     """Carga datos desde un archivo JSON. Si no existe, crea un archivo vacío."""
     if os.path.exists(ruta):
@@ -14,6 +15,7 @@ def cargar_datos(ruta):
             json.dump([], archivo)  # Escribir una lista vacía en el archivo
         return []
 
+# Función para guardar los datos en un archivo de formato .json
 def guardar_datos(ruta, datos):
     """Guarda los datos en un archivo JSON."""
     with open(ruta, 'w') as archivo:

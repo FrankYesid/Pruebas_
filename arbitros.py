@@ -1,6 +1,7 @@
+# Llamo al archivo .py que contiene las variables globales que cargo para uso general
+from config import arbitros
 
-#
-arbitros = []
+# Función con verificación si existe el arbitro
 def arbitro_existe(id_arbitro):
     """Busca un árbitro por su ID y muestra su información."""
     return any(equipo["id"] == id_arbitro for equipo in arbitros)
@@ -22,8 +23,7 @@ def registrar_arbitro(id_arbitro, nombre, experiencia, categoria):
     print(f"Arbitro '{nombre}' registrado con éxito.")
     return arbitros
 
-
-#
+# Función para buscar un arbitro específico
 def buscar_arbitro_por_id(id_arbitro):
     for arbitro in arbitros:
         if arbitro['id'] == id_arbitro:

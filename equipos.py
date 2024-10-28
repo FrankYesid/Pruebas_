@@ -1,4 +1,7 @@
 from gestion import *
+# Llamo al archivo .py que contiene las variables globales que cargo para uso general
+from config import equipos
+
 
 # Verificar si el ID del equipo ya existe
 def equipo_existe(id_equipo):
@@ -6,7 +9,6 @@ def equipo_existe(id_equipo):
     return any(equipo["id"] == id_equipo for equipo in equipos)
 
 # Agregar un nuevo equipo
-equipos = []
 def registrar_equipo(id_equipo, nombre, ciudad, director_tecnico):
     """Registra un nuevo equipo y lo guarda en equipos.json si no existe."""
     if equipo_existe(id_equipo):
@@ -49,16 +51,3 @@ def actualizar_estadisticas_equipo(id_equipo, ganados, empatados, perdidos, gole
         equipo["estadisticas"]["puntos"] += ganados * 3 + empatados
     else:
         raise ValueError("Equipo no encontrado.")
-
-#
-def generar_tabla_posiciones():
-    # Ordenar los equipos por puntos (descendente), y en caso de empate por diferencia de goles.
-    equipos_ordenados = sorted(
-        equipos,
-        key=lambda e: (
-            e['estadisticas']['puntos'],
-            e['estadisticas']['goles_a_favor'] - e['estadisticas']['goles_en_contra']
-        ),
-        reverse=True
-    )
-    return equipos_ordenados
