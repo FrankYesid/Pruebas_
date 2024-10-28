@@ -32,11 +32,6 @@ tournament-management/
 - **Actualizar resultados:** Goles y estadísticas de cada equipo.  
 - **Registrar eventos:** Minuto, tipo de evento (gol, falta, tarjeta), jugador involucrado.  
 
-### 5. **Gestión de Sanciones**  
-- **Registrar sanción:** ID, tipo (jugador/equipo), motivo, duración y estado.  
-- **Actualizar sanción:** Cambiar estado o duración.  
-- **Generar reporte:** Listado de sanciones activas y cumplidas.  
-
 ---
 
 ## Instalación  
