@@ -7,6 +7,7 @@ from gestion import *
 from reportes import *
 # agregar comentarios de cada sección 
 
+# Menú principal con lo solicitado de registrar, buscar, actualizar y visualizar reportes
 def menu():
     """
     Menú con las opciones relacionadas con la gestión de cada item solicitado, 
@@ -40,6 +41,7 @@ def menu():
         else:
             print("Opción no válida. Intente de nuevo.")
 
+# Menú de equipos con los solicitado
 def menu_equipos():
     while True:
         print("\n--- Gestión de Equipos ---")
@@ -124,6 +126,7 @@ def menu_equipos():
         else:
             print("Opción no válida. Intente nuevamente.")
 
+# Menú de jugadores
 def menu_jugadores():
     while True:
         print("\n--- Gestión de Jugadores ---")
@@ -160,6 +163,7 @@ def menu_jugadores():
         else:
             print("Opción no válida, por favor intente de nuevo.")
 
+# Menú de arbitros
 def menu_arbitros():
     while True:
         print("\n--- Gestión de Árbitros ---")
@@ -196,6 +200,7 @@ def menu_arbitros():
         else:
             print("Opción no válida, por favor intente de nuevo.")
 
+# Menú de partidos
 def menu_partidos():
     while True:
         print("\n--- Gestión de Partidos ---")
@@ -238,6 +243,7 @@ def menu_partidos():
         else:
             print("Opción no válida, por favor intente de nuevo.")
 
+# Menú de reportes
 def menu_reportes():
     print("\n--- Generación de Reportes ---")
     print("1. Tabla de posiciones")
