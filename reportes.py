@@ -15,6 +15,7 @@ def generar_tabla_posiciones():
                 f"{estadisticas['ganados']}G-{estadisticas['empatados']}E-{estadisticas['perdidos']}P | "
                 f"GF: {estadisticas['goles_favor']} GC: {estadisticas['goles_contra']}")
 
+# Función para visualizar tabla dee goleadores
 def generar_lista_goleadores():
     """
     """
@@ -24,6 +25,7 @@ def generar_lista_goleadores():
     for jugador in goleadores_ordenados:
         print(f"{jugador['nombre']} - {jugador['estadisticas']['goles']} goles")
 
+# Función para visualizar reporte de árbitros
 def generar_reporte_arbitros():
     """
     """
