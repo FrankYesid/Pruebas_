@@ -72,18 +72,47 @@ def menu_equipos():
 
         elif opcion == '3':
             # Actualizar la información de un equipo
-            id_equipo = int(input("ID del equipo a actualizar: "))
+            while True:
+                id_equipo_= input("ID del equipo a actualizar: ")
+                if id_equipo_.isdigit():
+                    break
+                else:
+                    print("El número ID debe ser un número")
+            id_equipo = int(id_equipo_)
             equipo = buscar_equipo(id_equipo)
             if equipo:
                 print(f"\nInformación actual del equipo {equipo['nombre']}:")
                 print(f"Ciudad: {equipo['ciudad']}, Director Técnico: {equipo['director_tecnico']}")
                 
-                nuevo_nombre = input("Nuevo nombre (deje vacío para no cambiar): ") or equipo['nombre']
-                nueva_ciudad = input("Nueva ciudad (deje vacío para no cambiar): ") or equipo['ciudad']
-                nuevo_director = input("Nuevo director técnico (deje vacío para no cambiar): ") or equipo['director_tecnico']
+                ganados = input("Nueva cantidad de partidos ganados (deje vacío para no cambiar): ") or equipo['estadisticas']['ganados']
+                if ganados != '':
+                    ganados = int(ganados)
+                else:
+                    ganados = equipo['estadisticas']['ganados']
+                empatados =input("Nueva cantidad de partidos empatados (deje vacío para no cambiar): ") or equipo['estadisticas']['empatados']
+                if empatados != '':
+                    empatados = int(empatados)
+                else:
+                    empatados = equipo['estadisticas']['empatados']
+                perdidos =input("Nueva cantidad de partidos perdidos (deje vacío para no cambiar): ") or equipo['estadisticas']['perdidos']
+                if perdidos != '':
+                    perdidos = int(perdidos)
+                else:
+                    perdidos = equipo['estadisticas']['perdidos']
+                goles_favor = input("Nueva cantidad de goles a favor (deje vacío para no cambiar): ") or equipo['estadisticas']['goles_favor']
+                if goles_favor != '':
+                    goles_favor = int(goles_favor)
+                else:
+                    goles_favor = equipo['estadisticas']['goles_favor']
+                goles_contra =input("Nueva cantidad de goles en contra (deje vacío para no cambiar): ") or equipo['estadisticas']['goles_contra']
+                if goles_contra != '':
+                    goles_contra = int(goles_contra)
+                else:
+                    goles_contra = equipo['estadisticas']['goles_contra']
+
                 # agregar las demás varriables del equipo.
-                actualizar_estadisticas_equipo(id_equipo, nuevo_nombre, nueva_ciudad, nuevo_director)
-                print(f"Equipo '{nuevo_nombre}' actualizado con éxito.")
+                actualizar_estadisticas_equipo(id_equipo, ganados, empatados, perdidos, goles_favor, goles_contra)
+                print(f"Equipo '{equipo['nombre']}' actualizado con éxito.")
             else:
                 print(f"No se encontró ningún equipo con ID {id_equipo}.")
 

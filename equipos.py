@@ -38,7 +38,7 @@ def registrar_equipo(id_equipo, nombre, ciudad, director_tecnico):
 def buscar_equipo(id_equipo):
     return next((e for e in equipos if e["id"] == id_equipo), None)
 
-# 
+# Función de actualizar información 
 def actualizar_estadisticas_equipo(id_equipo, ganados, empatados, perdidos, goles_favor, goles_contra):
     equipo = buscar_equipo(id_equipo)
     if equipo:
