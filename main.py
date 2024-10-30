@@ -5,7 +5,7 @@ from partidos import *
 from arbitros import *
 from gestion import *
 from reportes import *
-# agregar comentarios de cada sección 
+# Agregar comentarios de cada sección y en readme.md agregar la explicación de que contiene cada bloque
 
 # Menú principal con lo solicitado de registrar, buscar, actualizar y visualizar reportes
 def menu():
@@ -144,11 +144,11 @@ def menu_jugadores():
 
         elif opcion == "2":
             # Buscar jugador
-            id_jugador = int(input("Ingrese el ID del jugador a buscar: "))
+            id_jugador = verificar_numero("Ingrese el ID del jugador a buscar: ")
             buscar_jugador(id_jugador)
         elif opcion == "3":
             # Actualizar información de un jugador
-            id_jugador = int(input("Ingrese el ID del jugador a actualizar: "))
+            id_jugador = verificar_numero("Ingrese el ID del jugador a actualizar: ")
             actualizar_estadisticas_jugador(id_jugador)
         elif opcion == "4":
             # Salir del menú
@@ -173,7 +173,7 @@ def menu_arbitros():
             id_arbitro = verificar_numero("ID del árbitro: ")
             nombre = verificar_string("Nombre del árbitro: ")
             experiencia = verificar_numero("Años de experiencia del árbitro: ")
-            categoria = verificar_string("Categoría del árbitro: ")
+            categoria = verificar_categoria_arbitro()
             data = registrar_arbitro(id_arbitro, nombre, experiencia, categoria)
             if data != None:
                 guardar_datos('data/arbitros.json', data) 
@@ -217,19 +217,19 @@ def menu_partidos():
                 guardar_datos('data/partidos.json', data) 
 
         elif opcion == "2":
-            id_partido = int(input("Ingrese el ID del partido a buscar: "))
+            id_partido = verificar_numero("Ingrese el ID del partido a buscar: ")
             buscar_partido(id_partido)
         elif opcion == "3":
-            id_partido = int(input("Ingrese el ID del partido a actualizar: "))
-            goles_local = int(input("Goles del equipo local: "))
-            goles_visitante = int(input("Goles del equipo visitante: "))
+            id_partido = verificar_numero("Ingrese el ID del partido a actualizar: ")
+            goles_local = verificar_numero("Goles del equipo local: ")
+            goles_visitante = verificar_numero("Goles del equipo visitante: ")
             actualizar_resultados(id_partido, goles_local, goles_visitante)
         elif opcion == "4":
-            id_partido = int(input("Ingrese el ID del partido: "))
-            minuto = int(input("Minuto del evento: "))
-            tipo_evento = input("Tipo de evento (gol, tarjeta, sustitución, etc.): ")
-            jugador = input("Jugador involucrado: ")
-            equipo = input("Equipo del jugador: ")
+            id_partido = verificar_numero("Ingrese el ID del partido: ")
+            minuto = verificar_numero("Minuto del evento: ")
+            tipo_evento = verificar_string("Tipo de evento (gol, tarjeta, sustitución, etc.): ").title()
+            jugador = verificar_string("Jugador involucrado: ").title()
+            equipo = verificar_string("Equipo del jugador: ").title()
             registrar_evento(id_partido, minuto, tipo_evento, jugador, equipo)
         elif opcion == "5":
             print("Saliendo del menú de gestión de partidos.")

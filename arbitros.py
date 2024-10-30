@@ -1,5 +1,6 @@
 # Llamo al archivo .py que contiene las variables globales que cargo para uso general
 from config import arbitros
+from gestion import *
 
 # Función con verificación si existe el arbitro
 def arbitro_existe(id_arbitro):
@@ -22,6 +23,16 @@ def registrar_arbitro(id_arbitro, nombre, experiencia, categoria):
     arbitros.append(arbitro)
     print(f"Arbitro '{nombre}' registrado con éxito.")
     return arbitros
+
+# Función para verificar si la cateroría seleccionada 
+def verificar_categoria_arbitro():
+    categorias_validas = ["Fifa", "Nacional", "Regional"]  # Lista de categorías permitidas
+    while True:
+        categoria = verificar_string("Ingresa la categoría del árbitro (Fifa, Nacional, Regional): ").title().strip().capitalize()
+        if categoria in categorias_validas:
+            return categoria  # Retorna la categoría válida
+        else:
+            print("Error: Categoría no válida. Ingresa 'FIFA', 'Nacional' o 'Regional'.")
 
 # Función para buscar un arbitro específico
 def buscar_arbitro_por_id(id_arbitro):
