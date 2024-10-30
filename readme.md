@@ -77,7 +77,7 @@ Proyecto_Futbol/
 ---
 
 ## Ejemplo de Código  
-Aquí tienes un fragmento de cómo se registraría un equipo:
+Aquí tienes un fragmento de cómo se registraría un equipo de forma manual:
 
 ```python
 from models.equipo import Equipo
