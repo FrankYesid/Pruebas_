@@ -102,7 +102,6 @@ guardar_datos("data/equipos.json", equipo.to_dict())
 
 ## Tecnologías Utilizadas  
 - **Python 3.8+**  
-- **Tkinter:** Interfaz gráfica.  
 - **JSON:** Almacenamiento de datos.  
 - **Git:** Control de versiones.  
 
