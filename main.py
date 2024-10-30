@@ -41,7 +41,7 @@ def menu():
         else:
             print("Opción no válida. Intente de nuevo.")
 
-# Menú de equipos con los solicitado
+# Menú de equipos 
 def menu_equipos():
     while True:
         print("\n--- Gestión de Equipos ---")
