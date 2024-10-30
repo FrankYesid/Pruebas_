@@ -72,9 +72,7 @@ Proyecto_Futbol/
    ```bash
    python main.py
    ```
-2. **Interfaz gráfica:**  
-   La aplicación ofrece una **interfaz gráfica con Tkinter** para gestionar los módulos de manera visual.  
-3. **Navegación:** A través del menú principal, puedes acceder a cada sección del sistema (equipos, jugadores, partidos, etc.).
+2. **Navegación:** A través del menú principal, puedes acceder a cada sección del sistema (equipos, jugadores, partidos, etc.).
 
 ---
 
