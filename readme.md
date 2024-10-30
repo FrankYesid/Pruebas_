@@ -25,12 +25,17 @@ tournament-management/
 ### 3. **Gestión de Árbitros**  
 - **Registrar árbitro:** ID, nombre, categoría, experiencia y partidos dirigidos.  
 - **Asignar árbitro:** A un partido específico.  
-- **Generar reportes:** Detalle de árbitros y su rendimiento.  
 
 ### 4. **Gestión de Partidos**  
 - **Registrar partido:** ID, fecha, árbitro, equipos, alineaciones y resultados.  
 - **Actualizar resultados:** Goles y estadísticas de cada equipo.  
 - **Registrar eventos:** Minuto, tipo de evento (gol, falta, tarjeta), jugador involucrado.  
+
+
+### 5. **Generar reportes**
+- **Generar reporte de posiciones:** Detalla de las posiciones de los equipos.
+- **Generar reporte de goleadores:** Detalle de los goleadores del torneo.
+- **Generar reportes árbitros:** Detalle de árbitros y su rendimiento.  
 
 ---
 

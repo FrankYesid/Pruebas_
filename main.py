@@ -53,17 +53,17 @@ def menu_equipos():
 
         if opcion == '1':
             # Registrar un nuevo equipo
-            id_equipo = int(input("ID del equipo: "))
-            nombre = input("Nombre del equipo: ").title()
-            ciudad = input("Ciudad del equipo: ").title()
-            director_tecnico = input("Director técnico: ").title()
+            id_equipo = verificar_numero("ID del equipo: ")
+            nombre = verificar_string("Nombre del equipo: ").title()
+            ciudad = verificar_string("Ciudad del equipo: ").title()
+            director_tecnico = verificar_string("Director técnico: ").title()
             data  = registrar_equipo(id_equipo, nombre, ciudad, director_tecnico)
             if data != None:
                 guardar_datos('data/equipos.json', data) 
     
         elif opcion == '2':
             # Buscar un equipo
-            id_equipo = int(input("ID del equipo que desea buscar: "))
+            id_equipo = verificar_numero("ID del equipo que desea buscar: ")
             equipo = buscar_equipo(id_equipo)
             if equipo:
                 print(f"\nInformación del equipo {equipo['nombre']}:")
@@ -74,39 +74,33 @@ def menu_equipos():
 
         elif opcion == '3':
             # Actualizar la información de un equipo
-            while True:
-                id_equipo_= input("ID del equipo a actualizar: ")
-                if id_equipo_.isdigit():
-                    break
-                else:
-                    print("El número ID debe ser un número")
-            id_equipo = int(id_equipo_)
+            id_equipo = verificar_numero("ID del equipo a actualizar: ")
             equipo = buscar_equipo(id_equipo)
             if equipo:
                 print(f"\nInformación actual del equipo {equipo['nombre']}:")
                 print(f"Ciudad: {equipo['ciudad']}, Director Técnico: {equipo['director_tecnico']}")
                 
-                ganados = input("Nueva cantidad de partidos ganados (deje vacío para no cambiar): ") or equipo['estadisticas']['ganados']
+                ganados = verificar_numero("Nueva cantidad de partidos ganados (deje vacío para no cambiar): ") or equipo['estadisticas']['ganados']
                 if ganados != '':
                     ganados = int(ganados)
                 else:
                     ganados = equipo['estadisticas']['ganados']
-                empatados =input("Nueva cantidad de partidos empatados (deje vacío para no cambiar): ") or equipo['estadisticas']['empatados']
+                empatados = verificar_numero("Nueva cantidad de partidos empatados (deje vacío para no cambiar): ") or equipo['estadisticas']['empatados']
                 if empatados != '':
                     empatados = int(empatados)
                 else:
                     empatados = equipo['estadisticas']['empatados']
-                perdidos =input("Nueva cantidad de partidos perdidos (deje vacío para no cambiar): ") or equipo['estadisticas']['perdidos']
+                perdidos = verificar_numero("Nueva cantidad de partidos perdidos (deje vacío para no cambiar): ") or equipo['estadisticas']['perdidos']
                 if perdidos != '':
                     perdidos = int(perdidos)
                 else:
                     perdidos = equipo['estadisticas']['perdidos']
-                goles_favor = input("Nueva cantidad de goles a favor (deje vacío para no cambiar): ") or equipo['estadisticas']['goles_favor']
+                goles_favor = verificar_numero("Nueva cantidad de goles a favor (deje vacío para no cambiar): ") or equipo['estadisticas']['goles_favor']
                 if goles_favor != '':
                     goles_favor = int(goles_favor)
                 else:
                     goles_favor = equipo['estadisticas']['goles_favor']
-                goles_contra =input("Nueva cantidad de goles en contra (deje vacío para no cambiar): ") or equipo['estadisticas']['goles_contra']
+                goles_contra = verificar_numero("Nueva cantidad de goles en contra (deje vacío para no cambiar): ") or equipo['estadisticas']['goles_contra']
                 if goles_contra != '':
                     goles_contra = int(goles_contra)
                 else:
@@ -139,11 +133,11 @@ def menu_jugadores():
 
         if opcion == "1":
             # Registrar nuevo jugador
-            id_jugador = int(input("ID del jugador: "))
-            nombre = input("Nombre del jugador: ")
-            numero = int(input("Número del jugador: "))
-            posicion = input("Posición del jugador: ")
-            equipo_id = int(input("ID del equipo al que pertenece: "))
+            id_jugador = verificar_numero("ID del jugador: ")
+            nombre = verificar_string("Nombre del jugador: ")
+            numero = verificar_numero("Número del jugador: ")
+            posicion = verificar_string("Posición del jugador: ")
+            equipo_id = verificar_numero("ID del equipo al que pertenece: ")
             data = registrar_jugador(id_jugador, nombre, numero, posicion, equipo_id)
             if data != None:
                 guardar_datos('data/jugadores.json', data) 
@@ -176,10 +170,10 @@ def menu_arbitros():
 
         if opcion == "1":
             # Registrar nuevo árbitro
-            id_arbitro = int(input("ID del árbitro: "))
-            nombre = input("Nombre del árbitro: ")
-            experiencia = input("Experiencia del árbitro: ")
-            categoria = input("Categoría del árbitro: ")
+            id_arbitro = verificar_numero("ID del árbitro: ")
+            nombre = verificar_string("Nombre del árbitro: ")
+            experiencia = verificar_numero("Años de experiencia del árbitro: ")
+            categoria = verificar_string("Categoría del árbitro: ")
             data = registrar_arbitro(id_arbitro, nombre, experiencia, categoria)
             if data != None:
                 guardar_datos('data/arbitros.json', data) 
@@ -187,11 +181,11 @@ def menu_arbitros():
 
         elif opcion == "2":
             # Buscar árbitro
-            id_arbitro = int(input("Ingrese el ID del árbitro a buscar: "))
+            id_arbitro = verificar_numero("Ingrese el ID del árbitro a buscar: ")
             buscar_arbitro_por_id(id_arbitro)
         elif opcion == "3":
             # Actualizar información de un árbitro
-            id_arbitro = int(input("Ingrese el ID del árbitro a actualizar: "))
+            id_arbitro = verificar_numero("Ingrese el ID del árbitro a actualizar: ")
             actualizar_partidos_arbitro(id_arbitro)
         elif opcion == "4":
             # Salir del menú
@@ -213,11 +207,11 @@ def menu_partidos():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            id_partido = int(input("ID del partido: "))
-            fecha = input("Fecha del partido (YYYY-MM-DD): ")
-            id_arbitro = int(input("ID del árbitro: "))
-            equipo_local = input("Equipo local: ")
-            equipo_visitante = input("Equipo visitante: ")
+            id_partido = verificar_numero("ID del partido: ")
+            fecha = verificar_string("Fecha del partido (YYYY-MM-DD): ")
+            id_arbitro = verificar_numero("ID del árbitro: ")
+            equipo_local = verificar_string("Equipo local: ")
+            equipo_visitante = verificar_string("Equipo visitante: ")
             data = registrar_partido(id_partido, fecha, id_arbitro, equipo_local, equipo_visitante)
             if data != None:
                 guardar_datos('data/partidos.json', data) 
