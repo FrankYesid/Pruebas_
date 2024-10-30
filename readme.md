@@ -5,10 +5,25 @@ Este sistema es una aplicación desarrollada en **Python** que permite gestionar
 
 ## Estructura del Proyecto  
 ```
-tournament-management/
+Proyecto_Futbol/
+├── data/                     # Carpeta con los archivos JSON de datos
+│   ├── arbitros.json         # Datos de los árbitros
+│   ├── equipos.json          # Datos de los equipos
+│   ├── jugadores.json        # Datos de los jugadores
+│   └── partidos.json         # Datos de los partidos
+├── arbitros.py               # Módulo para gestionar los árbitros
+├── config.py                 # Configuración del proyecto
+├── equipos.py                # Módulo para gestionar los equipos
+├── gestion.py                # Lógica general de gestión deportiva
+├── jugadores.py              # Módulo para gestionar los jugadores
+├── main.py                   # Punto de entrada principal del proyecto
+├── partidos.py               # Módulo para gestionar los partidos
+├── reportes.py               # Generación de reportes
+├── readme.md                 # Documentación del proyecto
+└── requirements.txt          # Dependencias del proyecto
 ```
 
----
+**---**
 
 ## Funcionalidades Principales  
 
