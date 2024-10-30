@@ -50,3 +50,21 @@ def verificar_numero_no_negativo():
                 print("Error: El número no puede ser negativo.")
         except ValueError:
             print("Error: Por favor, ingresa un número entero válido.")
+
+# Función verificadora de la ciudad del equipo
+def verificar_ciudad_equipo():
+    ciudades_validas = [
+        "Bogotá", "Medellín", "Cali", "Barranquilla", "Manizales", 
+        "Bucaramanga", "Pereira", "Ibagué", "Cúcuta", "Santa Marta", 
+        "Neiva", "Tunja", "Villavicencio", "Montería", "Pasto", 
+        "Rionegro", "Envigado"
+    ]  # Lista de ciudades con equipos de fútbol profesional
+
+    while True:
+        print('\n------Nombre de las ciudades disponibles------')
+        print(ciudades_validas)
+        ciudad = input("Ingresa una ciudad con equipo de fútbol: ").title().strip().capitalize()
+        if ciudad in ciudades_validas:
+            return ciudad  # Retorna la ciudad si es válida
+        else:
+            print("Error: Ciudad no válida. Ingresa una ciudad que tenga un equipo de fútbol profesional en Colombia.")

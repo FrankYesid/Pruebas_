@@ -55,7 +55,7 @@ def menu_equipos():
             # Registrar un nuevo equipo
             id_equipo = verificar_numero("ID del equipo: ")
             nombre = verificar_string("Nombre del equipo: ").title()
-            ciudad = verificar_string("Ciudad del equipo: ").title()
+            ciudad = verificar_ciudad_equipo()
             director_tecnico = verificar_string("Director técnico: ").title()
             data  = registrar_equipo(id_equipo, nombre, ciudad, director_tecnico)
             if data != None:
